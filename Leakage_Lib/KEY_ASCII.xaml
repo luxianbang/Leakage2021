@@ -1,0 +1,406 @@
+﻿<Window x:Name="KEYASSCII" x:Class="Leakage_Lib.KEY_ASSCII"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Leakage_Lib"
+        mc:Ignorable="d"
+        Title="KEY_ASSCII" Height="335.619" Width="640" WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="Display_box" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="47" Margin="12,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="599" FontSize="20" FontWeight="Bold" BorderBrush="#FFE011B1"/>
+        <Button x:Name="KEY_OK" Content="Enter" HorizontalAlignment="Left" Height="50" Margin="538,237,0,0" 
+                VerticalAlignment="Top" Width="60" Tag="" FontSize="18" FontWeight="Bold" 
+                Click="KEY_OK_Click" Background="#FF51CB0B">
+            <!-- 设置圆角 -->
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button x:Name="KEY_Esc" Content="Esc" HorizontalAlignment="Left" Height="50" Margin="30,237,0,0" VerticalAlignment="Top" Width="60" Tag="" FontSize="18" FontWeight="Bold" Background="#FF1399A6">
+            <!-- 设置圆角 -->
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_1" Content="1" HorizontalAlignment="Left" Height="50" Margin="12,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFE8C00B"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_2" Content="2" HorizontalAlignment="Left" Height="50" Margin="68,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_3" Content="3" HorizontalAlignment="Left" Height="50" Margin="123,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_4" Content="4" HorizontalAlignment="Left" Height="50" Margin="178,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_5" Content="5" HorizontalAlignment="Left" Height="50" Margin="234,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_6" Content="6" HorizontalAlignment="Left" Height="50" Margin="289,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_7" Content="7" HorizontalAlignment="Left" Height="50" Margin="344,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_8" Content="8" HorizontalAlignment="Left" Height="50" Margin="398,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_9" Content="9" HorizontalAlignment="Left" Height="50" Margin="452,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_0" Content="0" HorizontalAlignment="Left" Height="50" Margin="507,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_删除" Content="删除" HorizontalAlignment="Left" Height="50" Margin="561,70,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="18" FontWeight="Bold" BorderBrush="{x:Null}" PreviewMouseLeftButtonDown="键_删除_PreviewMouseLeftButtonDown">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+            <Button.Background>
+                <SolidColorBrush Color="#FFF00B0B"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_Q" Content="Q" HorizontalAlignment="Left" Height="50" Margin="40,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_W" Content="W" HorizontalAlignment="Left" Height="50" Margin="95,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_E" Content="E" HorizontalAlignment="Left" Height="50" Margin="150,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B" RenderTransformOrigin="0.52,0.54">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_R" Content="R" HorizontalAlignment="Left" Height="50" Margin="205,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_T" Content="T" HorizontalAlignment="Left" Height="50" Margin="260,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_Y" Content="Y" HorizontalAlignment="Left" Height="50" Margin="315,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_U" Content="U" HorizontalAlignment="Left" Height="50" Margin="370,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_I" Content="I" HorizontalAlignment="Left" Height="50" Margin="426,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_O" Content="O" HorizontalAlignment="Left" Height="50" Margin="481,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B" RenderTransformOrigin="0.483,0.483">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_P" Content="P" HorizontalAlignment="Left" Height="50" Margin="535,127,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B" RenderTransformOrigin="0.483,0.483">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_A" Content="A" HorizontalAlignment="Left" Height="50" Margin="68,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键__" Content="-" HorizontalAlignment="Left" Height="50" Margin="12,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_S" Content="S" HorizontalAlignment="Left" Height="50" Margin="123,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_D" Content="D" HorizontalAlignment="Left" Height="50" Margin="178,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_F" Content="F" HorizontalAlignment="Left" Height="50" Margin="234,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_G" Content="G" HorizontalAlignment="Left" Height="50" Margin="289,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_H" Content="H" HorizontalAlignment="Left" Height="50" Margin="344,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_J" Content="J" HorizontalAlignment="Left" Height="50" Margin="398,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_K" Content="K" HorizontalAlignment="Left" Height="50" Margin="452,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_L" Content="L" HorizontalAlignment="Left" Height="50" Margin="507,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE86F0B" RenderTransformOrigin="0.483,0.483">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_d" Content="." HorizontalAlignment="Left" Height="50" Margin="562,182,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B" RenderTransformOrigin="0.483,0.483">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_Z" Content="Z" HorizontalAlignment="Left" Height="50" Margin="95,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_X" Content="X" HorizontalAlignment="Left" Height="50" Margin="150,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_C" Content="C" HorizontalAlignment="Left" Height="50" Margin="205,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_V" Content="V" HorizontalAlignment="Left" Height="50" Margin="260,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_B" Content="B" HorizontalAlignment="Left" Height="50" Margin="315,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_N" Content="N" HorizontalAlignment="Left" Height="50" Margin="370,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_M" Content="M" HorizontalAlignment="Left" Height="50" Margin="426,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="24" FontWeight="Bold" Click="ASCII_Click" Background="#FFE8C00B">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="键_切换" Content="切换" HorizontalAlignment="Left" Height="50" Margin="481,237,0,0" VerticalAlignment="Top" Width="50" Tag="1" FontSize="18" FontWeight="Bold" Click="键_切换_Click" Background="#FFE8C00B">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="10" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

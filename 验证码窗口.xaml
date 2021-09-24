@@ -1,0 +1,51 @@
+﻿<Window x:Class="Leakage2021.验证码窗口"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Leakage2021"
+        mc:Ignorable="d"
+        Title="验证码窗口" Height="215.369" Width="389.678" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FFECDB75">
+    <Grid Margin="0">
+        <TextBox x:Name="Inputy_box" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Left" Height="43" Margin="42,66,0,0" TextWrapping="Wrap" 
+                 VerticalAlignment="Top" Width="204" FontSize="36" FontWeight="Bold" PreviewKeyDown="Inputy_box_PreviewKeyDown">
+            <!-- 设置圆角 -->
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+            </TextBox.Foreground>
+
+
+        </TextBox>
+        <Button x:Name="KEY_重发" Content="更新" HorizontalAlignment="Left" Height="36" Margin="141,120,0,0" VerticalAlignment="Top" Width="86" Tag="" FontSize="18" Click="发送按键_Click" FontWeight="Bold">
+            <Button.Background>
+                <SolidColorBrush Color="#FF1399A6"/>
+            </Button.Background>
+            <!-- 设置圆角 -->
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="Enter" Content="Enter" HorizontalAlignment="Left" Height="43" Margin="263,66,0,0" VerticalAlignment="Top" Width="81" Tag="" FontSize="18" FontWeight="Bold" Click="Enter_Click" Background="#FF51CB0B">
+            <!-- 设置圆角 -->
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}" >
+                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="提示_Label" Content="Please input the verification &#13;      code on the device!" HorizontalAlignment="Center" Height="47" VerticalAlignment="Top" Width="380" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Red"/>
+
+    </Grid>
+</Window>

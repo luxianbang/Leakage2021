@@ -1,0 +1,1386 @@
+﻿<Page x:Class="Leakage2021.ParamSET"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Leakage2021"
+      mc:Ignorable="d"
+      Title="Param SET" Visibility="Visible" Width="650" Height="410">
+
+    <Grid Height="410">
+        <TabControl x:Name="Recipe_TabControl" Background="#FFF7F5F5" MinWidth="650" MinHeight="400" TabStripPlacement="Bottom">
+            <!--Visibility="Collapsed"-->
+            <TabItem Header="Now PROG" Margin="0" MinWidth="1">
+                <Grid >
+                    <Canvas Height="47" Background="#FFE2EEF0" VerticalAlignment="Top">
+                        <TextBlock Text="PROG:" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center"  IsEnabled="False" 
+                            FontSize="16" Height="19" Width="68" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Left="4" Canvas.Top="16">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="Recipe_MODEL_txt" InputMethod.IsInputMethodEnabled="False"  HorizontalAlignment="Center" Height="32" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" VerticalAlignment="Center" Width="177" FontWeight="Bold" IsReadOnly="False" 
+                            FontSize="16" Tag="1" RenderTransformOrigin="0.489,0.516" Background="{x:Null}" Canvas.Left="72" Canvas.Top="10" Uid="6000" 
+                            Text=""
+                            AutomationProperties.Name="D6000" PreviewMouseDown="MODEL_PreviewMouseDown" Focusable="False">
+
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <Button x:Name="SELECT_PROG_Button" Content="SELECT&#xA; PROG"  Height="47" VerticalAlignment="Center" HorizontalAlignment="Center" Width="78" Focusable="False" FontSize="14" FontWeight="Bold" Tag="" Background="#FF0A5CD3" Canvas.Left="284" PreviewMouseLeftButtonDown="SELECT_Button_PreviewMouseLeftButtonDown" ToolTip="Press and hold for more than 1s" Click="SELECT_PROG_Button_Click" >
+                            <Button.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </Button.Foreground>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}" >
+                                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Canvas>
+                    <Canvas Height="317" Margin="0,47,0,0" VerticalAlignment="Top">
+                        <Grid ShowGridLines="False" Background="#FFF1F7F3" Height="320" Width="644">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="38*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160*"/>
+                                <ColumnDefinition Width="90*"/>
+                                <ColumnDefinition Width="45*"/>
+                                <ColumnDefinition Width="45*"/>
+                                <ColumnDefinition Width="169*"/>
+                                <ColumnDefinition Width="90*"/>
+                                <ColumnDefinition Width="45*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,2,1,1" Grid.Column="0" Grid.Row="0">
+                                <Label x:Name="Fill_Press_Hi_A" Content="Fill Press Hi:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="1" Grid.Row="0">
+                                <TextBox x:Name="Fill_Press_Hi_A_txt" ToolTip = "充气压力上限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    Text=""
+                                    HorizontalContentAlignment="Center" Uid="6028" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,3" AutomationProperties.Name="D6028" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="2" Grid.Row="0">
+                                <Label x:Name="Fill_Unit5" Content="Kpa" Margin="0,0,0,-2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,0" Grid.Column="3" Grid.Row="0"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="4" Grid.Row="0">
+                                <Label x:Name="JIG_Down_Time_A" Content="JIG Down Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="5" Grid.Row="0">
+                                <TextBox x:Name="JIG_Down_Time_A_txt" ToolTip = "夹具下压时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" 
+                                    AutomationProperties.Name="D6011" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6011" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,3" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,2,1" Grid.Column="6" Grid.Row="0">
+                                <Label Content="S" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="1">
+                                <Label x:Name="Fill_Press_Lo_A" Content="Fill Press Lo:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="1">
+                                <TextBox x:Name="Fill_Press_Lo_A_txt" ToolTip = "充气压力下限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                            HorizontalContentAlignment="Center" Uid="6030" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="D6030" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="1">
+                                <Label x:Name="Fill_Unit2" Content="Kpa" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border x:Name="Fill_Press_Unit" BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="1" RenderTransformOrigin="0.511,0.381"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="1">
+                                <Label x:Name="Air_Fill_Time_A" Content="Air Fill Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="1">
+                                <TextBox x:Name="Air_Fill_Time_A_txt" ToolTip = "充气时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" 
+                                    AutomationProperties.Name="D6013" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6013" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="1">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="2">
+                                <Label x:Name="Upper_Leak_Limit_A" Content="Upper Leak Limit:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="2">
+                                <TextBox x:Name="Upper_Leak_Limit_A_txt" ToolTip = "泄漏压力上限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                            AutomationProperties.Name="D6032" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                            HorizontalContentAlignment="Center" Uid="6032" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="2">
+                                <Label x:Name="Leak_Unit1" Content="ccm" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="2"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="2">
+                                <Label x:Name="Settling_Time_A" Content="Settling Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="2">
+                                <TextBox x:Name="Settling_Time_A_txt" ToolTip = "稳定时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" 
+                                    AutomationProperties.Name="D6014" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6014" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="2">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="3">
+                                <Label x:Name="Lower_Leak_Limit_A" Content="Lower Leak Limit:" Margin="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="3">
+                                <TextBox x:Name="Lower_Leak_Limit_A_txt" ToolTip = "泄漏压力下限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="D6034" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6034" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="3">
+                                <Label x:Name="Leak_Unit2" Content="ccm" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="3"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="3">
+                                <Label x:Name="Test_Time_A" Content="Test Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="3">
+                                <TextBox x:Name="Test_Time_A_txt" ToolTip = "气密检查时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" 
+                                    AutomationProperties.Name="D6015" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6015" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="3">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="4">
+                                <Label x:Name="Cubage_A" Content="Cubage:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="4">
+                                <TextBox x:Name="Cubage_A_txt" ToolTip = "测试物体容积 ML" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="D6036" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6036" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="4">
+                                <Label Content="ML" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="4"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="4">
+                                <Label x:Name="Exhaust_Time_A" Content="Exhaust Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="4">
+                                <TextBox x:Name="Exhaust_Time_A_xtx" ToolTip = "排气时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" 
+                                    AutomationProperties.Name="D6016" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6016" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="4">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="5">
+                                <Label x:Name="Tank_Press_Hi_A" Content="Tank Press Hi:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="5">
+                                <TextBox x:Name="Tank_Press_Hi_A_txt" ToolTip = "罐充气压力上限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="D6020" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6020" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="5">
+                                <Label x:Name="Tank_Fill_Unit1" Content="Kpa" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFD46F47"/>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="5"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="5">
+                                <Label x:Name="Tank_Settling_Time_A" Content="Tank Settling Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="5">
+                                <TextBox x:Name="Tank_Settling_Time_A_txt" ToolTip = "罐稳定时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" 
+                                    AutomationProperties.Name="D6012" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6012" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Foreground="#FFD46F47" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="5">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFD46F47"/>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="6">
+                                <Label x:Name="Tank_Press_Lo_A" Content="Tank Press Lo:" Margin="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="6">
+                                <TextBox x:Name="Tank_Press_Lo_A_txt" ToolTip = "罐充气压力下限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="D6022" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6022" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="6">
+                                <Label x:Name="Tank_Fill_Unit2" Content="Kpa" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFD46F47"/>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="6"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="6">
+                                <Label x:Name="Tank_Press_Differe_A" Content="Tank Press Differe:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Tag="float">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="6">
+                                <TextBox x:Name="Tank_Press_Differe_A_txt" ToolTip = "罐大泄漏压力差" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="D6024" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6024" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Foreground="#FFD46F47" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="6">
+                                <Label x:Name="Tank_Press_Differe_Unit1" Content="Kpa" Margin="0,0,-2,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFD46F47"/>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,2" Grid.Column="0" Grid.Row="7">
+                                <Label x:Name="Ven_Cap_Press_Differe_A" Content="   Vent Cap &#xA;Press Differe:" Margin="0" 
+                                       HorizontalContentAlignment="Center" FontSize="16" FontWeight="Bold" VerticalContentAlignment="Center">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="1" Grid.Row="7">
+                                <TextBox x:Name="Ven_Cap_Press_Differe_A_txt" ToolTip = "防水贴压力差" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="D6026" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6026" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="2" Grid.Row="7">
+                                <Label x:Name="Ven_Cap_Press_Differe_Unit1" Content="Kpa" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF7E1EDE"/>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="3" Grid.Row="7"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="4" Grid.Row="7">
+                                <Label x:Name="Vent_Cap_Num_A" Content="Vent Cap Num:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="5" Grid.Row="7">
+                                <TextBox x:Name="Vent_Cap_Num_A_txt" ToolTip = "防水贴数量" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="1" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U0" 
+                                    AutomationProperties.Name="D6010" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="6010" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Foreground="#FF7E1EDE" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,2" Grid.Column="6" Grid.Row="7">
+                                <Label Content="EA" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF7E1EDE"/>
+                            </Border>
+
+
+                            <!--<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1"/>-->
+                            <!--<Border BorderBrush="Blue" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <Border BorderBrush="Red" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="1"/>
+                    <Border BorderBrush="Orange" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Border BorderBrush="Lime" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>-->
+
+                        </Grid>
+                    </Canvas>
+                </Grid>
+
+            </TabItem>
+            <!--Visibility="Collapsed"-->
+            <TabItem Header="Select PROG">
+                <Grid >
+                    <Canvas Height="47" Background="#FF0F92A6" VerticalAlignment="Top">
+                        <TextBlock Text="PROG:" TextWrapping="Wrap" FontWeight="Bold" TextAlignment="Center"  IsEnabled="False" 
+                            FontSize="16" Height="19" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="16" Canvas.Left="3">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBox x:Name="Select_MODEL_txt" InputMethod.IsInputMethodEnabled="False"  HorizontalAlignment="Center" Height="32" 
+                            TextWrapping="Wrap" Text="888888888888" VerticalAlignment="Center" Width="131" FontWeight="Bold" IsReadOnly="False" 
+                            FontSize="16" Tag="" AutomationProperties.Name="RW0" RenderTransformOrigin="0.489,0.516" Canvas.Left="111" Canvas.Top="10" 
+                            Background="{x:Null}" Uid="0" Focusable="False" PreviewMouseDown="MODEL_PreviewMouseDown" VerticalContentAlignment="Center" ToolTip="Program name">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="#FFEE7A06"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <Button x:Name="NEXT_Button" Content="NEXT"  Height="35" VerticalAlignment="Center" HorizontalAlignment="Center" Width="76" Focusable="False" FontSize="14" FontWeight="Bold" Tag="" Background="#FF2A892A" Click="NEXT_Click" Canvas.Left="365" Canvas.Top="7" ToolTip="Next program" >
+                            <Button.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </Button.Foreground>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}" >
+                                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="PREV_Button" Content="PREV"  Height="35" VerticalAlignment="Center" HorizontalAlignment="Center" Width="76" Focusable="False" FontSize="14" FontWeight="Bold" Tag="" Background="#FF2A892A" Click="PREV_Click" Canvas.Left="269" Canvas.Top="7" ToolTip="Previous program" >
+                            <Button.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </Button.Foreground>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}" >
+                                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="SELECT_Button" Content="SELECT"  Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Focusable="False" FontSize="14" FontWeight="Bold" Tag="" Background="#FF0A5CD3" Canvas.Left="461" Canvas.Top="4" PreviewMouseLeftButtonDown="SELECT_Button_PreviewMouseLeftButtonDown" ToolTip="Press and hold for more than 1s" >
+                            <Button.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </Button.Foreground>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}" >
+                                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="DELETE_Button" Content="DELETE"  Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Width="60" Focusable="False" FontSize="14" FontWeight="Bold" Tag="" Background="#FFE61E0A" Canvas.Left="550" Canvas.Top="4" PreviewMouseLeftButtonDown="DELETE_Button_PreviewMouseLeftButtonDown" ToolTip="Press and hold for more than 1s" >
+                            <Button.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </Button.Foreground>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}" >
+                                    <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <TextBox x:Name="PROG_NUM_txt" InputMethod.IsInputMethodEnabled="False"  HorizontalAlignment="Center" Height="32" 
+                            TextWrapping="Wrap" Text="#001:" VerticalAlignment="Center" Width="52" FontWeight="Bold" IsReadOnly="False" 
+                            FontSize="16" Tag="PROG_NUM" AutomationProperties.Name="RW0" RenderTransformOrigin="0.712,0.25" Canvas.Left="58" Canvas.Top="10" 
+                            Background="{x:Null}" Uid="21000" Focusable="False" PreviewMouseDown="Value_BOX_PreviewMouseDown" VerticalContentAlignment="Center" ToolTip="Program Number">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                    </Canvas>
+                    <Canvas Height="317" Margin="0,47,0,0" VerticalAlignment="Top">
+                        <Grid ShowGridLines="False" Background="#FFBACD67" Height="320" Width="644">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="27*" />
+                                <RowDefinition Height="38*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160*"/>
+                                <ColumnDefinition Width="90*"/>
+                                <ColumnDefinition Width="45*"/>
+                                <ColumnDefinition Width="45*"/>
+                                <ColumnDefinition Width="169*"/>
+                                <ColumnDefinition Width="90*"/>
+                                <ColumnDefinition Width="45*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,2,1,1" Grid.Column="0" Grid.Row="0">
+                                <Label x:Name="Fill_Press_Hi_B" Content="Fill Press Hi:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="1" Grid.Row="0">
+                                <TextBox x:Name="Fill_Press_Hi_B_txt" ToolTip = "充气压力上限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" 
+                                    AutomationProperties.Name="RWI28" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="28" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,3" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="2" Grid.Row="0">
+                                <Label x:Name="Fill_Unit3" Content="Kpa" Margin="0,0,-1,-2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,0" Grid.Column="3" Grid.Row="0"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="4" Grid.Row="0">
+                                <Label x:Name="JIG_Down_Time_B" Content="JIG Down Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,1,1" Grid.Column="5" Grid.Row="0">
+                                <TextBox x:Name="JIG_Down_Time_B_txt" ToolTip = "夹具下压时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="11" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5,5,5,3" AutomationProperties.Name="RWI11" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,2,2,1" Grid.Column="6" Grid.Row="0">
+                                <Label Content="S" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="1">
+                                <Label x:Name="Fill_Press_Lo_B" Content="Fill Press Lo:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="1">
+                                <TextBox x:Name="Fill_Press_Lo_B_txt" ToolTip = "充气压力下限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                            HorizontalContentAlignment="Center" Uid="30" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI30" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="1">
+                                <Label x:Name="Fill_Unit4" Content="Kpa" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border x:Name="Fill_Press_Unit_" BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="1" RenderTransformOrigin="0.511,0.381"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="1">
+                                <Label x:Name="Air_Fill_Time_B" Content="Air Fill Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="1">
+                                <TextBox x:Name="Air_Fill_Time_B_txt" ToolTip = "充气时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="13" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI13" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="1">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="2">
+                                <Label x:Name="Upper_Leak_Limit_B" Content="Upper Leak Limit:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="2">
+                                <TextBox x:Name="Upper_Leak_Limit_B_txt" ToolTip = "泄漏压力上限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                            HorizontalContentAlignment="Center" Uid="32" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI32" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="2">
+                                <Label x:Name="Leak_Unit3" Content="ccm" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="2"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="2">
+                                <Label x:Name="Settling_Time_B" Content="Settling Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="2">
+                                <TextBox x:Name="Settling_Time_B_txt" ToolTip = "稳定时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="14" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI14" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="2">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="3">
+                                <Label x:Name="Lower_Leak_Limit_B" Content="Lower Leak Limit:" Margin="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="3">
+                                <TextBox x:Name="Lower_Leak_Limit_B_txt" ToolTip = "泄漏压力下限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="34" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI34" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="3">
+                                <Label x:Name="Leak_Unit4" Content="ccm" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="3"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="3">
+                                <Label x:Name="Test_Time_B" Content="Test Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="3">
+                                <TextBox x:Name="Test_Time_B_txt" ToolTip = "气密检查时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="15" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI15" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="3">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="4">
+                                <Label x:Name="Cubage_B" Content="Cubage:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="4">
+                                <TextBox x:Name="Cubage_B_txt" ToolTip = "测试物体容积 ML" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="36" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI36" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="4">
+                                <Label Content="ML" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="4"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="4">
+                                <Label x:Name="Exhaust_Time_B" Content="Exhaust Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="4">
+                                <TextBox x:Name="Exhaust_Time_B_xtx" ToolTip = "排气时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="16" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI16" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="4">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="5">
+                                <Label x:Name="Tank_Press_Hi_B" Content="Tank Press_Hi:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="5">
+                                <TextBox x:Name="Tank_Press_Hi_B_txt" ToolTip = "罐充气压力上限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="20" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI20" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="5">
+                                <Label x:Name="Tank_Fill_Unit3" Content="Kpa" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="5"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="5">
+                                <Label x:Name="Tank_Settling_Time_B" Content="Tank Settling Time:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="5">
+                                <TextBox x:Name="Tank_Settling_Time_B_txt" ToolTip = "罐稳定时间" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.0" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U1" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="12" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI12" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="5">
+                                <Label Content="S" Margin="0,0,0,2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,1" Grid.Column="0" Grid.Row="6">
+                                <Label x:Name="Tank_Press_Lo_B" Content="Tank Press Lo:" Margin="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="6">
+                                <TextBox x:Name="Tank_Press_Lo_B_txt" ToolTip = "罐充气压力下限" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="22" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI22" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="2" Grid.Row="6">
+                                <Label x:Name="Tank_Fill_Unit4" Content="Kpa" Margin="0,0,-1,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,0" Grid.Column="3" Grid.Row="6"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="4" Grid.Row="6">
+                                <Label x:Name="Tank_Press_Differe_B" Content="Tank Press Differe:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,1" Grid.Column="5" Grid.Row="6">
+                                <TextBox x:Name="Tank_Press_Differe_B_txt" ToolTip = "罐大泄漏压力差" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="24" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,1" Grid.Column="6" Grid.Row="6">
+                                <Label x:Name="Tank_Press_Differe_Unit2" Content="Kpa" Margin="0,0,-2,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FFD46F47"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+                            <Border BorderBrush="Blue" BorderThickness="2,0,1,2" Grid.Column="0" Grid.Row="7">
+                                <Label x:Name="Ven_Cap_Press_Differe_B" Content="   Vent Cap &#xA;Press Differe:" Margin="0" 
+                                       HorizontalContentAlignment="Center" FontSize="16" FontWeight="Bold" VerticalContentAlignment="Center">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="1" Grid.Row="7">
+                                <TextBox x:Name="Ven_Cap_Press_Differe_B_txt" ToolTip = "防水贴压力差" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="0.00" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="F2" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="26" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI26" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="2" Grid.Row="7">
+                                <Label x:Name="Ven_Cap_Press_Differe_Unit2" Content="Kpa" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FF7E1EDE"/>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="3" Grid.Row="7"/>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="4" Grid.Row="7">
+                                <Label x:Name="Vent_Cap_Num_B" Content="Vent Cap Num:" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,1,2" Grid.Column="5" Grid.Row="7">
+                                <TextBox x:Name="Vent_Cap_Num_B_txt" ToolTip = "防水贴数量" InputMethod.IsInputMethodEnabled="False" VerticalContentAlignment="Center" 
+                                    TextWrapping="Wrap" Text="1" FontWeight="Bold" 
+                                    TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="U0" RenderTransformOrigin="0.517,0.452" 
+                                    PreviewMouseDown="Value_BOX_PreviewMouseDown" 
+                                    HorizontalContentAlignment="Center" Uid="10" Background="{x:Null}" BorderBrush="{x:Null}" Margin="5" AutomationProperties.Name="RWI10" Focusable="False">
+                                    <!-- 设置圆角 -->
+                                    <TextBox.Resources>
+                                        <Style TargetType="{x:Type Border}">
+                                            <Setter Property="CornerRadius" Value="3"/>
+                                        </Style>
+                                    </TextBox.Resources>
+                                    <TextBox.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </TextBox.Foreground>
+                                </TextBox>
+                            </Border>
+                            <Border BorderBrush="Blue" BorderThickness="0,0,2,2" Grid.Column="6" Grid.Row="7">
+                                <Label Content="EA" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" FontWeight="Bold">
+                                    <Label.Foreground>
+                                        <SolidColorBrush Color="#FF7E1EDE"/>
+                                    </Label.Foreground>
+                                </Label>
+                            </Border>
+
+
+                            <!--<Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1"/>-->
+                            <!--<Border BorderBrush="Blue" BorderThickness="0,1,1,1" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+                    <Border BorderBrush="Red" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="1"/>
+                    <Border BorderBrush="Orange" BorderThickness="0,0,1,1" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <Border BorderBrush="Lime" BorderThickness="1,0,1,1" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>-->
+
+                        </Grid>
+                    </Canvas>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TEST">
+                <Grid Margin="0,-1,-3,0" >
+                    <TextBox x:Name="MODEL" HorizontalAlignment="Left" Height="31" VerticalContentAlignment="Center" TextWrapping="Wrap" 
+                        VerticalAlignment="Top" Width="141" FontWeight="Bold" TextAlignment="Center" Background="White" MaxLines="1"  
+                        IsReadOnly="False" FontSize="16" Tag="1" AutomationProperties.Name="D300=0x1258" Margin="31,375,0,0" 
+                        PreviewMouseDown="MODEL_PreviewMouseDown" Uid="300">
+                        <!-- 提示消息  -->
+                        <!--<TextBox.ToolTip>
+                                输入TAPPING JIG
+                            </TextBox.ToolTip>-->
+
+                        <!-- 设置圆角 -->
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+                        </TextBox.Foreground>
+                    </TextBox>
+                    <Canvas Height="47" Background="#FF0F92A6" VerticalAlignment="Top"/>
+                    <Canvas Height="318" Margin="0,47,0,0" Background="#FFDED51D" VerticalAlignment="Top" Width="650">
+                        <Grid Height="92" Width="631"/>
+
+
+
+
+                        <ComboBox x:Name = "comboBox" Width = "100" RenderTransformOrigin="0.5,0.524" Canvas.Left="202" Canvas.Top="155">
+                            <ComboBoxItem Content = "Green" />
+                            <ComboBoxItem  Content = "Yellow" IsSelected = "True" />
+                            <ComboBoxItem Content = "Orange" />
+                        </ComboBox>
+
+                        <TextBox  x:Name = "textBox" 
+                                Width = "100" Height = "23" VerticalAlignment = "Top" 
+                                Text  = "{Binding SelectedItem.Content, ElementName=comboBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                Background = "{Binding SelectedItem.Content, ElementName=comboBox}" Canvas.Left="202" Canvas.Top="207">
+                        </TextBox>
+
+
+
+
+
+                        <TextBox x:Name="GET_Press_Down_Time" ToolTip = "JIG Press Down Time" InputMethod.IsInputMethodEnabled="False"   
+                            HorizontalAlignment="Left" Height="31" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="##.#" VerticalAlignment="Top" Width="50" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="T" 
+                            AutomationProperties.Name="D5001=0x6711" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" Uid="305" Canvas.Left="26" Canvas.Top="44">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                            </TextBox.Background>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <TextBox x:Name="GET_Tank_Settling_Time" ToolTip = "Tank Settling Time" InputMethod.IsInputMethodEnabled="False"   
+                            HorizontalAlignment="Left" Height="31" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="##.#" VerticalAlignment="Top" Width="50" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="T" 
+                            AutomationProperties.Name="D5001=0x6711" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" Uid="306" Canvas.Left="115" Canvas.Top="44">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                            </TextBox.Background>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <TextBox x:Name="GET_Fill_Time" ToolTip = "input air time" InputMethod.IsInputMethodEnabled="False"   
+                            HorizontalAlignment="Left" Height="31" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="##.#" VerticalAlignment="Top" Width="50" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="T" 
+                            AutomationProperties.Name="D5001=0x6711" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" Uid="307" Canvas.Left="202" Canvas.Top="44">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                            </TextBox.Background>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <TextBox x:Name="GET_Settling_Time" ToolTip = "Test Settling Time" InputMethod.IsInputMethodEnabled="False"   
+                            HorizontalAlignment="Left" Height="31" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="##.#" VerticalAlignment="Top" Width="50" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="T" 
+                            AutomationProperties.Name="D5001=0x6711" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" Uid="308" Canvas.Left="273" Canvas.Top="53">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                            </TextBox.Background>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <TextBox x:Name="GET_Test_Time" ToolTip = "Test Leak Time" InputMethod.IsInputMethodEnabled="False"   
+                            HorizontalAlignment="Left" Height="31" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="##.#" VerticalAlignment="Top" Width="50" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="T" 
+                            AutomationProperties.Name="D5001=0x6711" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" Uid="309" Canvas.Left="353" Canvas.Top="53">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                            </TextBox.Background>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <TextBox x:Name="GET_Exit_Time" ToolTip = "output air time" InputMethod.IsInputMethodEnabled="False" Height="31" VerticalContentAlignment="Center" 
+                            TextWrapping="Wrap" Text="##.#" Width="50" FontWeight="Bold" 
+                            TextAlignment="Center" IsReadOnly="False" FontSize="16" Tag="T" 
+                            AutomationProperties.Name="D5001=0x6711" RenderTransformOrigin="0.517,0.452" 
+                            PreviewMouseDown="Value_BOX_PreviewMouseDown" Uid="310" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="463" Canvas.Top="44">
+                            <!-- 设置圆角 -->
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                            <TextBox.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                            </TextBox.Background>
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                    </Canvas>
+
+
+
+
+
+
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
+
+    </Grid>
+</Page>

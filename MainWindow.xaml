@@ -1,0 +1,730 @@
+﻿<Window x:Name="Main_Window" x:Class="Leakage2021.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"       
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalon="http://schemas.xceed.com/wpf/xaml/avalondock"  
+        xmlns:local="clr-namespace:Leakage2021"        
+        mc:Ignorable="d"
+        Title="Leakage Test System" Height="913.75" Width="1401.5" Closed="窗口关闭事件" SizeChanged="窗口大小更改事件" WindowStartupLocation="CenterScreen" Loaded="Main_Window_Loaded" WindowState="Maximized">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="375*"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--菜单-->
+        <DockPanel Grid.Row="0">
+            <!--菜单-->
+            <Menu x:Name="menu" Height="25" VerticalAlignment="Top" DockPanel.Dock="Top">
+
+                <Menu.Background>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                </Menu.Background>
+
+                <MenuItem x:Name="MenuItem_文件" Header="File">
+                    <!--MenuItem Header="_New..."  IsCheckable="True"/-->
+                    <MenuItem x:Name="MenuItem_打开文件" Header="Open File" Click="打开文件_Click" InputGestureText="Ctrl+O">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/open.jpg"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="菜单_保存" Header="Save" InputGestureText="Ctrl+S" Click="保存_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/SAVE_OFF.jpg"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="MenuItem_退出" Header="Exit" Click="EXIT_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/Exit.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="菜单_设置" Header="Set Up">
+                    <MenuItem x:Name="菜单_系统参数" Header="System Param" Click="系统参数_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/参数.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="菜单_语言" Header="语言">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/language.ico"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="CN" Click="Language_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resources/CN.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="EN" Click="Language_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Resources/EN.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem x:Name="菜单_添加用户"  Header="Add User" Click="User_Add_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="Resources/user_add.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem x:Name="菜单_修改系统密码"  Header="修改系统密码" Click="修改系统密码_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="Resources/key.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <!--<Separator />
+                    <MenuItem Command="Undo">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/open.jpg"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />-->
+                    <!--<MenuItem Command="Redo" />
+                    <Separator/>
+                    <MenuItem Command="Cut" />
+                    <Separator />
+                    <MenuItem Command="Copy" />
+                    <Separator />
+                    <MenuItem Command="Paste" />-->
+                </MenuItem>
+
+                <MenuItem x:Name="菜单_视图" Header="View">
+                    <MenuItem x:Name="菜单_默认布局" Header="Default Layout" IsChecked="False" Click="默认布局_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/默认布局.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem x:Name="菜单_主题" Header="Theme">
+                        <MenuItem Header="Dock" Click="Theme_Click"></MenuItem>
+                        <Separator />
+                        <MenuItem Header="Aero" Click="Theme_Click"></MenuItem>
+                        <Separator />
+                        <MenuItem Header="Metro" Click="Theme_Click"></MenuItem>
+                        <Separator />
+                        <MenuItem Header="VS2010" Click="Theme_Click"></MenuItem>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_输出窗口" Header="Out Log" IsChecked="True" Click="输出窗口_Click"/>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_状态栏" Header="Statu Bar" IsChecked="True" Click="状态栏_Click"/>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_曲线图" Header="Curve" Click="Curve_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/Chartico.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_测试数据" Header="Test Data" Click="Test_Data_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/data.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_气密参数" Header="Leak Param" Click="气密参数_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/参数.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_产品追踪" Header="Product Track" Click="产品追踪_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/STATE.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="菜单_在线" Header="On Line">
+                    <MenuItem x:Name="菜单_连接窗口" Header="Conn Win" Click="连接窗口_Click" IsChecked="True"/>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_联机"  Header="Conn" Click="联机_Click" InputGestureText="Ctrl+n">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/Disconnect.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_联机设定" Header="Conn Set" Click="联机设定_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/SET.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <!--分隔线-->
+                    <Separator />
+                    <MenuItem x:Name="菜单_下载" Header="Down" IsEnabled="False" Click="下载_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources\下载OFF.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="菜单_上载" Header="Upload" IsEnabled="False" Click="上载_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources\上载OFF.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+                <MenuItem x:Name="菜单_工具" Header="Tool">
+                    <Separator />
+                    <!--分隔线-->
+                </MenuItem>
+
+                <MenuItem x:Name="菜单_帮助" Header="Help">
+                    <MenuItem x:Name="菜单_关于" Header="About" Click="关于_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/问号.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <!--分隔线-->
+                    <MenuItem x:Name="菜单_说明" Header="Explain" Click="说明_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Resources/说明.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+            </Menu>
+            <!--菜单 END-->
+
+
+
+            <!--<Label FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Blue" Margin="0,-33,50,0" 
+                           HorizontalContentAlignment="Right" HorizontalAlignment="Right" DockPanel.Dock="Right" Content="Leakage TEST System"></Label>-->
+
+            <!--<Label FontSize="20" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Blue" Margin="0,-33,0,0" 
+                           HorizontalContentAlignment="Right" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                
+                
+            </Label>-->
+
+
+
+        </DockPanel>
+
+        <!--工具栏-->
+        <DockPanel Grid.Row="1" Height="35">
+            <!--工具栏-->
+            <ToolBarTray x:Name="toolBarTray" DockPanel.Dock="Top" Height="35" VerticalAlignment="Top" ToolBarTray.IsLocked="True">
+                <!--<ToolBar x:Name="toolBar" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">-->
+                <ToolBar Band="0" BandIndex="1" Height="35">
+                    <Separator />
+                    <Button Click="打开文件_Click">
+                        <Image Source="Resources\open.jpg"/>
+                    </Button>
+                    <Button x:Name="工具栏_保存">
+                        <Image Source="Resources\SAVE_OFF.jpg"/>
+                    </Button>
+                    <Button>
+                        <Image Source="Resources\Center.png"/>
+                    </Button>
+                    <Button>
+                        <Image Source="Resources\STATE.png"/>
+                    </Button >
+                    <Button x:Name="工具栏_联机" Click="联机_Click" ToolTip="连接和断开设备联接!">
+                        <Image Source="Resources\Disconnect.ico"/>
+                    </Button>
+                    <Separator />
+                </ToolBar>
+
+                <ToolBar Band="0" BandIndex="1" Height="35">
+                    <Separator />
+                    <Button Click="Curve_Click">
+                        <Button.Content>
+                            <WrapPanel>
+                                <Image Source="Resources\Chartico.png"/>
+                                <Label x:Name="曲线_Label" Content="Curve"/>
+                            </WrapPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Click="Test_Data_Click">
+                        <Button.Content>
+                            <WrapPanel>
+                                <Image Source="Resources\data.ico"/>
+                                <Label x:Name="数据_Label" Content="Data"/>
+                            </WrapPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Click="产品追踪_Click">
+                        <Button.Content>
+                            <WrapPanel>
+                                <Image Source="Resources\STATE.png"/>
+                                <Label x:Name="追踪_Label" Content="Track"/>
+                            </WrapPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Click="气密参数_Click">
+                        <Button.Content>
+                            <WrapPanel>
+                                <Image Source="Resources\参数.png"/>
+                                <Label x:Name="参数_Label" Content="Param"/>
+                            </WrapPanel>
+                        </Button.Content>
+                    </Button>
+                    <Separator />
+                </ToolBar>
+
+                <ToolBar Band="0" BandIndex="1" Height="35" Margin="0,0,8,0">
+
+                    <TextBox x:Name="SN_text" Width="180" FontWeight="Bold" FontSize="14" Background="#FFF5F505" 
+                             PreviewKeyDown="SN框键按下事件" MaxLength="20" ToolTip="输入条码，输入TEST可以测试启动!">
+                        <!-- 设置圆角 -->
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+
+                    <Separator />
+                    <Border Width="20"/>
+                    <Button x:Name="START_BT" Content="START" Tag="0" VerticalAlignment="Top" HorizontalAlignment="Right" Focusable="False" 
+                            Canvas.Left="425" FontSize="14" FontWeight="Bold" Background="#FF909590" Click="START_Click" Canvas.Top="3" Margin="0,-2,0,-3" Height="35" MinWidth="60" IsEnabled="False" >
+                        <Button.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
+                        </Button.Foreground>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}" >
+                                <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="10"/>
+                    <Separator />
+                    <Button Width="10"/>
+                    <Button x:Name="STOP_BT" Content="STOP" VerticalAlignment="Top" HorizontalAlignment="Right" Focusable="False" 
+                            Canvas.Left="553" FontSize="14" FontWeight="Bold" Tag="OFF" Click="STOP_Click" Canvas.Top="8" Height="35" Margin="0,-2,0,-3" Width="60" MinWidth="60" Background="#FF831111" >
+                        <Button.Foreground>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                        </Button.Foreground>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}" >
+                                <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="20"/>
+                    <Separator />
+                    <StatusBarItem>
+                        <CheckBox x:Name="ShowData_CheckBox" Content="ShowData" FontWeight="Bold"/>
+                    </StatusBarItem>
+                    <StatusBarItem>
+                        <CheckBox x:Name="AutoScan_CheckBox" Content="AutoScan" FontWeight="Bold" Click="AutoScan_CheckBox_Click" Loaded="AutoScan_CheckBox_Loaded"/>
+                    </StatusBarItem>
+
+                    <StatusBarItem>
+                        <CheckBox x:Name="EnterStart_CheckBox" Content="EnterStart" FontWeight="Bold" 
+                                  Click="EnterStart_CheckBox_Click" Loaded="EnterStart_CheckBox_Loaded">
+                        </CheckBox>
+                    </StatusBarItem>
+
+                </ToolBar>
+
+
+
+                <!--<ToolBar Band="0" BandIndex="1" Height="35">
+                    <Separator />
+                    <Label Margin="0,0,0,-5">Z:</Label>
+                    <ComboBox>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">14</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                    </ComboBox>
+                    <Separator />
+                </ToolBar>-->
+            </ToolBarTray>
+        </DockPanel>
+
+        <!--停靠窗体容器-->
+        <DockPanel Grid.Row="2">
+            <!--状态栏-->
+            <StatusBar x:Name="状态栏" DockPanel.Dock="Bottom" Height="25" Background="#FF007ACC" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+
+                <!--显示登陆用户-->
+                <StatusBarItem>
+                    <Label x:Name="User_Label" Content="USER :" IsEnabled="False" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" Height="25" Margin="0" Padding="5,3,5,5" FontWeight="Bold" MinWidth="58" Width="42">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </Label.Foreground>
+                    </Label>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label x:Name="User_ID_text" Content="" IsEnabled="False" VerticalContentAlignment="Stretch" Height="25" Margin="0" Padding="5,3,5,5" FontWeight="Bold" MinWidth="60">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </Label.Foreground>
+                    </Label>
+                </StatusBarItem>
+                <Separator />
+                <!--拉线号显示-->
+                <StatusBarItem>
+                    <Label x:Name="Line_Label" Content="Line :" IsEnabled="False" HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch" Canvas.Left="106" Canvas.Top="1" Height="25" Margin="0" Padding="5,3,5,5" FontWeight="Bold" MinWidth="30">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </Label.Foreground>
+                    </Label>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label x:Name="Line_text" Content="" IsEnabled="False" VerticalContentAlignment="Stretch" Canvas.Left="106" Canvas.Top="1" Height="25" Margin="0" Padding="5,3,5,5" FontWeight="Bold" MinWidth="32">
+                        <Label.Foreground>
+                            <SolidColorBrush Color="White"/>
+                        </Label.Foreground>
+                    </Label>
+                </StatusBarItem>
+                <Separator />
+                <!--工序号显示-->
+                <StatusBarItem>
+                    <Label x:Name="oper_Label" Content="OPER : " Height="26" Padding="5,3,5,5" Foreground="White" FontWeight="Bold" MinWidth="54" HorizontalContentAlignment="Right"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label x:Name="OPER_text" Content="3520" Padding="5,3,5,5" Foreground="White" FontWeight="Bold" Height="26" MinWidth="40"/>
+                </StatusBarItem>
+                <Separator />
+                <!--型号显示-->
+                <StatusBarItem>
+                    <Label x:Name="model_Label" Content="MODEL :" Height="26" Padding="5,3,5,5" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Right" MinWidth="56"/>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Label x:Name="model_text" Content="" Height="26" Padding="5,3,5,5" Foreground="White" FontWeight="Bold" MinWidth="80"/>
+                </StatusBarItem>
+                <Separator />
+
+
+
+                <!--<StatusBarItem>
+                    <Border Width="50" Height="25"/>
+                </StatusBarItem>-->
+
+
+                <!--时间日期显示-->
+                <StatusBarItem FlowDirection="RightToLeft" HorizontalAlignment="Right">
+                    <Label x:Name="time_text" Content="Time: 2021/3/18 15:19:15" Height="26" Padding="5,3,5,5" Foreground="White" FontWeight="Bold"/>
+                </StatusBarItem>
+
+            </StatusBar>
+
+            <!--停靠窗体容器-->
+            <avalon:DockingManager x:Name="dockManager" Grid.Row="2" AllowMixedOrientation="True" Loaded="停靠容器加载完成">
+
+                <!--主题风格-->
+                <avalon:DockingManager.Theme>
+                    <!--<avalon:MetroTheme/>-->
+                    <avalon:VS2010Theme/>
+                </avalon:DockingManager.Theme>
+                <!--ICO-->
+                <avalon:DockingManager.DocumentHeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
+                            <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </avalon:DockingManager.DocumentHeaderTemplate>
+
+                <!--停靠窗体内容控件-->
+                <avalon:LayoutRoot>
+                    <!--布局根目录-->
+                    <avalon:LayoutPanel Orientation="Horizontal">
+                        <avalon:LayoutPanel Orientation="Vertical" DockWidth="2*">
+                            <avalon:LayoutPanel Orientation="Horizontal" DockHeight="120*">
+
+                                <!--左边窗口锚定布局组-->
+                                <!--<avalon:LayoutAnchorablePaneGroup Orientation="Vertical" DockWidth="150">
+                                
+                                    <avalon:LayoutAnchorablePane AllowDuplicateContent="True" CanRepositionItems="False">
+                                        <avalon:LayoutAnchorable x:Name="左上窗口1" Title="左上窗口1" ContentId="左上窗口1" ToolTip="左上窗口1" IsSelected="True" CanHide="False" CanClose="False">
+                                            <TextBox x:Name="textBox" Background="#FF252526" Foreground="White">
+                                            </TextBox>
+                                        </avalon:LayoutAnchorable>
+                                        <avalon:LayoutAnchorable x:Name="左上窗口2" Title="左上窗口2" ContentId="左上窗口2" ToolTip="左上窗口2" IsSelected="False" CanHide="False" CanClose="False">
+                                            <TextBox x:Name="textBox1" Background="#FF252526" Foreground="White">
+                                            </TextBox>
+
+                                        </avalon:LayoutAnchorable>
+                                    </avalon:LayoutAnchorablePane>
+                                   
+                                    <avalon:LayoutAnchorablePaneGroup Orientation="Horizontal">
+                                        <avalon:LayoutAnchorablePane>
+                                            <avalon:LayoutAnchorable Title="左下窗口" IsSelected="True" ContentId="左下窗口" CanClose="False">
+                                                <TextBox Background="#FF252526" Foreground="White"/>
+                                            </avalon:LayoutAnchorable>
+                                        </avalon:LayoutAnchorablePane>
+                                    </avalon:LayoutAnchorablePaneGroup>
+                                    
+                                </avalon:LayoutAnchorablePaneGroup>-->
+
+                                <!--中间文档窗口布局组-->
+                                <avalon:LayoutDocumentPaneGroup Orientation="Horizontal" DockWidth="3*">
+                                    <!--布局_文档窗格-->
+                                    <avalon:LayoutDocumentPane DockWidth="Auto">
+                                        <!--布局_文档->图表-->
+                                        <avalon:LayoutDocument x:Name="曲线图" Title="Curve" ContentId="Curve_Document"  IconSource="/Leakage2021;component/Resources/Chartico.png" IsSelected="True" 
+                                                               CanClose="False" ToolTip="Curve_Document">
+                                            <Grid x:Name="grid" ClipToBounds="True" Margin="0,-4">
+                                                <Grid.Background>
+                                                    <SolidColorBrush Color="Black"/>
+                                                </Grid.Background>
+
+                                                <!--曲线画布-->
+                                                <Canvas x:Name="canvas" MinWidth="0" MinHeight="0"/>
+
+                                                <!--画布状态栏-->
+                                                <StatusBar Margin="0,0,0,601" Height="45" Background="{x:Null}" Foreground="#FFFFFEFE" VerticalAlignment="Top">
+                                                    <StatusBarItem MinWidth="40"></StatusBarItem>
+                                                    <StatusBarItem MinWidth="50" HorizontalContentAlignment="Center">
+                                                        <Ellipse x:Name="LED" Fill="#FF77F50D" Height="22" Canvas.Left="7" Stroke="Black" 
+                                                             Canvas.Top="14" Width="23" RenderTransformOrigin="-0.672,0.077"/>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <Label x:Name="MODEL_Label"  Content="MODEL :" FontSize="16" Canvas.Left="38" Canvas.Top="6" 
+                                                           Foreground="White" MinWidth="76" HorizontalContentAlignment="Right"/>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <TextBox x:Name="display_model" FontWeight="Bold" IsReadOnly="True" FontSize="16" MinWidth="100" HorizontalContentAlignment="Center" Text="---">
+                                                            <!-- 设置圆角 -->
+                                                            <TextBox.Resources>
+                                                                <Style TargetType="{x:Type Border}">
+                                                                    <Setter Property="CornerRadius" Value="3"/>
+                                                                </Style>
+                                                            </TextBox.Resources>
+                                                        </TextBox>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <Label x:Name="InAir_Label"  Content="In Air :" FontSize="16" Canvas.Left="244" Canvas.Top="6" 
+                                                           Foreground="White" MinWidth="76" HorizontalContentAlignment="Right" Width="58"/>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <TextBox x:Name="display_press" FontWeight="Bold" IsReadOnly="True" 
+                                                            FontSize="16" MinWidth="80" HorizontalContentAlignment="Center" Text="---">
+                                                            <!-- 设置圆角 -->
+                                                            <TextBox.Resources>
+                                                                <Style TargetType="{x:Type Border}">
+                                                                    <Setter Property="CornerRadius" Value="3"/>
+                                                                </Style>
+                                                            </TextBox.Resources>
+                                                        </TextBox>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <Label x:Name="Pa_Label"  Content="压差 :" FontSize="16" Canvas.Left="38" Canvas.Top="6" 
+                                                           Foreground="White" MinWidth="60" HorizontalContentAlignment="Right"/>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <TextBox x:Name="display_leak" FontWeight="Bold" IsReadOnly="True" 
+                                                            FontSize="16" MinWidth="90" HorizontalContentAlignment="Center" Text="---">
+                                                            <!-- 设置圆角 -->
+                                                            <TextBox.Resources>
+                                                                <Style TargetType="{x:Type Border}">
+                                                                    <Setter Property="CornerRadius" Value="3"/>
+                                                                </Style>
+                                                            </TextBox.Resources>
+                                                        </TextBox>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <Label x:Name="CCM_Label"  Content="Leak :" FontSize="16" Canvas.Left="38" Canvas.Top="6" 
+                                                           Foreground="White" MinWidth="60" HorizontalContentAlignment="Right"/>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <TextBox x:Name="display_CCM" FontWeight="Bold" IsReadOnly="True" 
+                                                            FontSize="16" MinWidth="90" HorizontalContentAlignment="Center" Text="---">
+                                                            <!-- 设置圆角 -->
+                                                            <TextBox.Resources>
+                                                                <Style TargetType="{x:Type Border}">
+                                                                    <Setter Property="CornerRadius" Value="3"/>
+                                                                </Style>
+                                                            </TextBox.Resources>
+                                                        </TextBox>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <Label x:Name="Time_Label"  Content="Time :" FontSize="16" Canvas.Left="38" Canvas.Top="6" 
+                                                           Foreground="White" MinWidth="60" HorizontalContentAlignment="Right"/>
+
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <TextBox x:Name="display_Time" Text="--" FontWeight="Bold" IsReadOnly="True" 
+                                                            FontSize="16" MinWidth="50" HorizontalContentAlignment="Center">
+                                                            <!-- 设置圆角 -->
+                                                            <TextBox.Resources>
+                                                                <Style TargetType="{x:Type Border}">
+                                                                    <Setter Property="CornerRadius" Value="3"/>
+                                                                </Style>
+                                                            </TextBox.Resources>
+                                                        </TextBox>
+                                                    </StatusBarItem>
+                                                    <StatusBarItem MinWidth="40" >
+
+                                                    </StatusBarItem>
+                                                    <StatusBarItem>
+                                                        <TextBox x:Name="State_txt" FontWeight="Bold" IsReadOnly="True" 
+                                                            FontSize="30" MinWidth="100" HorizontalContentAlignment="Center" Background="Wheat">
+                                                            <!-- 设置圆角 -->
+                                                            <TextBox.Resources>
+                                                                <Style TargetType="{x:Type Border}">
+                                                                    <Setter Property="CornerRadius" Value="3"/>
+                                                                </Style>
+                                                            </TextBox.Resources>
+                                                        </TextBox>
+                                                    </StatusBarItem>
+
+                                                    <StatusBarItem>
+
+                                                    </StatusBarItem>
+
+                                                </StatusBar>
+                                            </Grid>
+                                        </avalon:LayoutDocument>
+
+                                        <!--布局_文档->Layout_Doc ContentId="Layout_Doc" 会保存布局-->
+                                        <!--<avalon:LayoutDocument x:Name="Layout_Doc" ToolTip="Layout_Doc">
+                                        </avalon:LayoutDocument>-->
+
+                                    </avalon:LayoutDocumentPane>
+                                </avalon:LayoutDocumentPaneGroup>
+                            </avalon:LayoutPanel>
+
+                            <!--下输出窗口-->
+                            <avalon:LayoutAnchorablePane DockHeight="20*">
+                                <!--输出窗口1-->
+                                <avalon:LayoutAnchorable x:Name="OUT1"  Title="OUT1" ContentId="OUT1" IsSelected="True" CanClose="False" Hidden="输出窗口_Hidden">
+                                    <ScrollViewer BorderBrush="Black">
+                                        <TextBox x:Name="OUT1_TextBox" Background="#FF252526" Foreground="White" TextWrapping="Wrap"/>
+                                    </ScrollViewer>
+                                </avalon:LayoutAnchorable>
+                                <!--输出窗口3-->
+                                <!--<avalon:LayoutAnchorable x:Name="OUT2" Title="OUT2" ContentId="OUT2" IsSelected="False" CanClose="False">
+                                    <ScrollViewer>
+                                        <TextBox x:Name="OUT2_TextBox" Background="#FF252526" Foreground="White" TextWrapping="Wrap"/>
+                                    </ScrollViewer>
+                                </avalon:LayoutAnchorable>-->
+                            </avalon:LayoutAnchorablePane>
+
+                        </avalon:LayoutPanel>
+
+                        <!--右边锚定布局组->连接窗口-->
+                        <avalon:LayoutAnchorablePaneGroup x:Name="右边锚定布局组"  DockWidth="Auto" DockMinWidth="180">
+                            <avalon:LayoutAnchorablePane>
+                                <avalon:LayoutAnchorable x:Name="连接窗口" Title="连接窗口" ContentId="Connection" Hidden="连接窗口_Hidden" AutoHideMinWidth="100" AutoHideMinHeight="100">
+                                    <Grid>
+                                        <Canvas Background="#FF467580">
+                                            <TextBlock  Text="IP:" Foreground="White" FontSize="14" VerticalAlignment="Center" Canvas.Top="13" Canvas.Left="4"/>
+                                            <TextBlock  Text="Port:" Foreground="White" FontSize="14" VerticalAlignment="Center" Canvas.Top="42" Canvas.Left="52"/>
+                                            <TextBlock  Text="ID:" Foreground="White" FontSize="14" VerticalAlignment="Center" Canvas.Top="42" Canvas.Left="127"/>
+                                            <TextBlock  Text="Bar Port:" Foreground="White" FontSize="14" VerticalAlignment="Center" Canvas.Top="74" Canvas.Left="4" Width="65"/>
+
+                                            <ComboBox x:Name="Port_Num" Width="56" PreviewMouseLeftButtonDown="Port_Num_PreviewMouseLeftButtonDown" 
+                                                      FontSize="8" SelectedIndex="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="18" FontWeight="Bold" Canvas.Left="66" Canvas.Top="74" DropDownClosed="Port_Num_DropDownClosed"/>
+
+                                            <TextBox x:Name="TCP_IP" Text="192.168.1.100" VerticalAlignment="Center" FontSize="11" Canvas.Left="24" Canvas.Top="12" 
+                                                     LostFocus="TCP_IP_LostFocus" TextAlignment="Center" PreviewTextInput="TCP_IP_PreviewTextInput" MinWidth="90"/>
+                                            <TextBox  x:Name="TCP_Port" Canvas.Left="87" Canvas.Top="43" Width="38" Text="502" TextAlignment="Center" FontWeight="Bold" 
+                                                      PreviewTextInput="TCP_Port_PreviewTextInput"/>
+
+                                            <TextBox x:Name="Slave_ID" Canvas.Left="148" Canvas.Top="43" Width="20" Text="01" FontWeight="Bold" TextAlignment="Center" 
+                                                     PreviewTextInput="TCP_ID_PreviewTextInput" LostFocus="Slave_ID_LostFocus"/>
+
+                                            <!--<Button x:Name="连接按钮" Grid.Column="2" Content="连接" Background="LightBlue" FontWeight="Black" VerticalAlignment="Center" Click="联机_Click" Canvas.Left="119" Canvas.Top="4"/>-->
+                                            <Button x:Name="连接按钮" Canvas.Left="127" Click="联机_Click" Height="25" Width="27" Canvas.Top="7">
+                                                <Image Source="Resources\Disconnect.ico"/>
+                                            </Button>
+
+                                            <Button x:Name="本机IP按钮" Content="本机IP" Background="#FFF1CA42" FontWeight="Black" VerticalAlignment="Center" 
+                                                    Click="本机IP_Click" Canvas.Left="7" Canvas.Top="42"/>
+                                            <Button x:Name="SN_TEST_BT"  Content="TEST" Canvas.Left="127" Canvas.Top="74" Width="41" Height="20" Click="SN_TEST_Click" FontSize="10"/>
+
+                                        </Canvas>
+
+                                        <TreeView x:Name="treeView" FontSize="14" FontWeight="Bold"  Foreground="White" Background="#FF252526" Margin="1,107,2,0" RenderTransformOrigin="0.5,0.5">
+
+                                            <!--<TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate ItemsSource="{Binding Path=子节点}">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Image Source="Resources\联机.ico" Width="16" Height="16"/>
+                                                        <TextBlock Text="{Binding Path=节点名}" />
+                                                    </StackPanel>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>-->
+
+
+                                        </TreeView>
+
+                                    </Grid>
+
+                                </avalon:LayoutAnchorable>
+                            </avalon:LayoutAnchorablePane>
+                        </avalon:LayoutAnchorablePaneGroup>
+
+                    </avalon:LayoutPanel>
+
+                    <!--左隐藏布局-->
+                    <!--<avalon:LayoutRoot.LeftSide>
+                        <avalon:LayoutAnchorSide>
+                            <avalon:LayoutAnchorGroup x:Name="BottomGroup">
+                                <avalon:LayoutAnchorable x:Name="左隐藏窗口" Title="左隐藏窗口" ContentId="左隐藏窗口" AutoHideWidth="157" AutoHideMinWidth="100" AutoHideMinHeight="100">
+                                    <TextBox Background="#FF252526">
+
+                                    </TextBox>
+                                </avalon:LayoutAnchorable>
+                            </avalon:LayoutAnchorGroup>
+                        </avalon:LayoutAnchorSide>
+                    </avalon:LayoutRoot.LeftSide>-->
+
+                    <!--右隐藏布局-->
+                    <!--<avalon:LayoutRoot.RightSide>
+                        <avalon:LayoutAnchorSide>
+                            <avalon:LayoutAnchorGroup>
+                                <avalon:LayoutAnchorable x:Name="右隐藏窗口" Title="右隐藏窗口" ContentId="右隐藏窗口" 
+                                                        AutoHideWidth="152" AutoHideMinWidth="100" AutoHideMinHeight="100"
+                                                        CanHide="True" CanClose="False" CanDockAsTabbedDocument="False" IsActive="True" IsMaximized="True" IsSelected="True" IsVisible="False">
+                                    <Grid>
+                                        <Canvas Margin="0,0,0,305" Background="#FF467580">
+                                            <TextBlock  Text="IP" Foreground="White" FontSize="14" VerticalAlignment="Center" Canvas.Top="6" Canvas.Left="4"/>
+                                            <TextBox x:Name="IP_Addr" Text="192.168.1.100" VerticalAlignment="Center" FontSize="11" Canvas.Left="23" Canvas.Top="6" LostFocus="IP_Addr_LostFocus"/>
+                                            <TextBox  x:Name="Port" Canvas.Left="52" Canvas.Top="31" Width="38"></TextBox>
+
+                                            <Button x:Name="连接按钮" Grid.Column="2" Background="LightBlue" FontWeight="Black" VerticalAlignment="Center" Click="联机_Click" Canvas.Left="119" Canvas.Top="4">
+                                                <Image Source="Resources\Disconnect.ico"/>
+                                            </Button> 
+
+                                            <Button x:Name="查找按钮" Content="查 找" Background="#FFF1CA42" FontWeight="Black" VerticalAlignment="Center" Click="查找_Click" Canvas.Left="108" Canvas.Top="29"/>
+                                            <Button x:Name="本机IP按钮" Content="本机IP" Background="#FFF1CA42" FontWeight="Black" VerticalAlignment="Center" Click="本机IP_Click" Canvas.Left="7" Canvas.Top="29"/>
+                                        </Canvas>
+
+                                        <TreeView x:Name="TreeView" FontSize="14" FontWeight="Bold"  Foreground="White" Background="#FF252526" Margin="1,49,2,0" RenderTransformOrigin="0.5,0.5"/>
+
+                                    </Grid>
+                                </avalon:LayoutAnchorable>
+                            </avalon:LayoutAnchorGroup>
+                        </avalon:LayoutAnchorSide>
+                    </avalon:LayoutRoot.RightSide>-->
+
+                </avalon:LayoutRoot>
+
+            </avalon:DockingManager>
+
+
+
+        </DockPanel>
+        <!--ACE LOG-->
+        <Image x:Name="Image_LOG" Source="Resources/ACElog.png" VerticalAlignment="Center"
+               HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,30,0" Width="175"/>
+
+    </Grid>
+</Window>

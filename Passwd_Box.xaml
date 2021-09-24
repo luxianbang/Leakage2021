@@ -1,0 +1,60 @@
+﻿<Window x:Name="PasswdBox" x:Class="Leakage2021.Passwd_Box"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Leakage2021"
+        mc:Ignorable="d"
+        Title="Please input a Password" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="{x:Null}" FontSize="16" FontWeight="Bold" Loaded="Passbox_Loaded" Height="175.147" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxWidth="450" Width="409.299" ContentRendered="PasswdBox_ContentRendered" WindowStyle="ToolWindow">
+    <Grid Margin="0,0,0,1">
+
+
+        <!--Visibility="Collapsed"-->
+        <TabControl x:Name="密码选择框" >
+            <TabItem x:Name="输入密码" FontWeight="Normal" FontSize="10" Visibility="Collapsed">
+                <Grid Background="#FF1F526A">
+                    <TextBlock x:Name="TXT_Block" TextWrapping="Wrap" Text="请重新输入!" FontSize="16" Foreground="#FFC9C6C8" MinHeight="20" Height="33" Margin="0,10,0,91" Width="397" TextAlignment="Center" FontWeight="Bold"/>
+
+                    <PasswordBox x:Name="Password_Box_txt" HorizontalAlignment="Center" Height="39"
+                     VerticalAlignment="Center" Width="249" PreviewKeyDown="Password_Box_txt_PreviewKeyDown" 
+                     Cursor="" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                     RenderTransformOrigin="0.484,1" ToolTip="请输入密码" Margin="73,48,75,47"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="修改密码" FontWeight="Normal" FontSize="10">
+
+                <Canvas Background="#FFB2A94D">
+                    <TextBlock x:Name="TXT_Block1" TextWrapping="Wrap" Text="请重新输入!" FontSize="16" Foreground="#FF0B0B0C" MinHeight="20" Height="30" Width="397" TextAlignment="Center" FontWeight="Bold"/>
+                   
+                    <Label x:Name="旧密码_Label"  Content="Enter old password:" Canvas.Left="24" Canvas.Top="30" Width="126" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="新密码1_Label" Content="Enter new password:" Canvas.Left="24" Canvas.Top="60" HorizontalContentAlignment="Right" Width="126"/>
+                    <Label x:Name="新密码2_Label" Content="Confirm new password:" Canvas.Left="24" Canvas.Top="90" Width="126" HorizontalContentAlignment="Right"/>
+                    <Label x:Name="显示密码_Label"></Label>
+
+                    <Button x:Name="Enter" Content="Enter" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="62" Tag="" 
+                            FontSize="16" FontWeight="Bold" Click="Enter_Click" Background="#FF51CB0B" Canvas.Left="293" Canvas.Top="52">
+                        <!-- 设置圆角 -->
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}" >
+                                <Border x:Name="border" BorderThickness="1" Padding="4,2" BorderBrush="DarkGray" CornerRadius="5" Background="{TemplateBinding Background}" >
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <PasswordBox x:Name="新密码1_Box" Width="120" Height="20" Canvas.Left="150" Canvas.Top="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewKeyDown="新密码1_Box_PreviewKeyDown"/>
+                    <PasswordBox x:Name="新密码2_Box" Width="120" Height="20" Canvas.Left="150" Canvas.Top="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewKeyDown="新密码2_Box_PreviewKeyDown"/>
+                    <PasswordBox x:Name="旧密码_Box"  Width="120" Height="20" Canvas.Left="150" Canvas.Top="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewKeyDown="旧密码_Box_PreviewKeyDown"/>
+
+                </Canvas>
+
+
+            </TabItem>
+
+
+
+        </TabControl>
+
+    </Grid>
+</Window>
